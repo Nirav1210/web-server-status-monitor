@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const connection = require('./dbConnection');
-const getServerStatus = require('./get-status');
+const updateServerStatus = require('./update-status');
 const shelljs = require('shelljs');
 
 gulp.task('init', () => {
@@ -17,7 +17,7 @@ gulp.task('init', () => {
 });
 
 gulp.task('get-status', ['init'], () => {
-    getServerStatus(connection);
+    updateServerStatus(connection);
 });
 
 gulp.task('disconnect-db', ['get-status'], () => {
